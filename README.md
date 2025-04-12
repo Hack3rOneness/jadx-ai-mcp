@@ -121,17 +121,23 @@ The following MCP tools are available:
 
 ### 1. Downlaod from Releases: https://github.com/zinja-coder/jadx-ai-mcp/releases
 
+**Note:** Download both `jadx-ai-mcp-<version>.jar` and `jadx-mcp-server-<version>.zip` files.
+
+
 ```bash
-# 1. Unzip the jadx-ai-mcp<version>.zip
+# 0. Download the jadx-ai-mcp-<version>.jar and jadx-mcp-server-<version>.zip
+https://github.com/zinja-coder/jadx-ai-mcp/releases
+
+# 1. 
 unzip jadx-ai-mcp-<version>.zip
 
-jadx-mcp-server/
-├── jadx_mcp.py
-├── requirements.txt
-├── README.md
-├── LICENSE
-jadx-ai-mcp/
-├── jadx-ai-mcp-<version>.jar
+├jadx-mcp-server/
+  ├── jadx_mcp.py
+  ├── requirements.txt
+  ├── README.md
+  ├── LICENSE
+
+├jadx-ai-mcp-<version>.jar
 
 # 2. Install the plugin
 ```
@@ -140,8 +146,8 @@ jadx-ai-mcp/
 ![img_2.png](docs/assets/img_2.png)
 ![img_3.png](docs/assets/img_3.png)
 ```bash
-# 3. Navigate to jadx_mcp_server directory
-cd jadx_mcp_server
+# 3. Navigate to jadx-mcp-server directory
+cd jadx-mcp-server
 
 # 4. This project uses uv - https://github.com/astral-sh/uv instead of pip for dependency management.
     ## a. Install uv (if you dont have it yet)
@@ -173,9 +179,9 @@ And following content in it:
             "command": "/home/<YOUR_USERNAME/.local/bin/uv",
             "args": [
                 "--directory",
-                "</PATH/TO/>jadx_mcp_server/",
+                "</PATH/TO/>jadx-mcp-server/",
                 "run",
-                "jadx_mcp.py"
+                "jadx_mcp_server.py"
             ]
         }
     }
