@@ -117,7 +117,7 @@ The following MCP tools are available:
 
 ---
 
-## 🛠️ Getting Started
+## 🛠️ Getting Started 
 
 ### 1. Downlaod from Releases: https://github.com/zinja-coder/jadx-ai-mcp/releases
 
@@ -140,6 +140,15 @@ unzip jadx-ai-mcp-<version>.zip
 ├jadx-ai-mcp-<version>.jar
 
 # 2. Install the plugin
+
+# For this you can follow two approaches:
+
+## 1. One liner - execute below command in your shell
+jadx plugins --install "github:zinja-coder:jadx-ai-mcp"
+
+## The above one line code will install the latest version of the plugin directly into the jadx, no need to download the jadx-ai-mcp's .jar file.
+
+## 2. GUI method, download the .jar file and follow below steps shown in images
 ```
 ![img.png](docs/assets/img123.png)
 ![img_1.png](docs/assets/img_12.png)
@@ -256,7 +265,7 @@ Also huge thanks to [@aaddrick](https://github.com/aaddrick) for developing Clau
 
 ## 📄 License
 
-This plugin inherits the Apache 2.0 License from the original JADX repository.
+JADX-AI-MCP and all related projects inherits the Apache 2.0 License from the original JADX repository.
 
 ## ⚖️ Legal Warning
 
