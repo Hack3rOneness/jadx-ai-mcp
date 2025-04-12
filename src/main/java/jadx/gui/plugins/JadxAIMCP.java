@@ -30,6 +30,19 @@ public class JadxAIMCP implements JadxPlugin {
 
     @Override
     public void init(JadxPluginContext context) {
+        if (context.getGuiContext() != null && context.getGuiContext().getMainFrame() != null) {
+            this.mainWindow = (MainWindow) context.getGuiContext().getMainFrame();
+            System.out.println("MCP HTTP Plugin: Starting HTTP server...");
+            this.start(mainWindow);
+        } else {
+            System.out.println("MCP HTTP Plugin: GUI context or MainFrame not available, skipping HTTP server init.");
+        }
+    }
+
+
+    /*
+    @Override
+    public void init(JadxPluginContext context) {
         if (context.getGuiContext() == null) {
             return;
         } else {
@@ -40,7 +53,7 @@ public class JadxAIMCP implements JadxPlugin {
         //start();
         //new JadxAIPlugin(mainWindow).start();
     }
-
+    */
     // Add this public no-argument constructor
     public JadxAIMCP() {
         // Empty constructor
