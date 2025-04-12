@@ -30,12 +30,25 @@ public class JadxAIMCP implements JadxPlugin {
 
     @Override
     public void init(JadxPluginContext context) {
-        if (context.getGuiContext() != null && context.getGuiContext().getMainFrame() != null) {
+        // First check if we're in a GUI context - if not, exit gracefully
+        if (context.getGuiContext() == null) {
+            System.out.println("Plugin: Running in non-GUI mode, plugin features disabled.");
+            return;
+        }
+
+        try {
+            // Now safe to use GUI context
             this.mainWindow = (MainWindow) context.getGuiContext().getMainFrame();
+            if (this.mainWindow == null) {
+                System.err.println("Plugin: Main window is null. Plugin will not start.");
+                return;
+            }
+
             System.out.println("MCP HTTP Plugin: Starting HTTP server...");
             this.start(mainWindow);
-        } else {
-            System.out.println("MCP HTTP Plugin: GUI context or MainFrame not available, skipping HTTP server init.");
+        } catch (Exception e) {
+            System.err.println("Plugin: Initialization error: " + e.getMessage());
+            // Don't throw exceptions that will crash JADX
         }
     }
 
