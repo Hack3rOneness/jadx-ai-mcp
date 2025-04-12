@@ -10,6 +10,7 @@ import jadx.api.JavaMethod;
 import jadx.api.plugins.JadxPlugin;
 import jadx.api.plugins.JadxPluginContext;
 import jadx.api.plugins.JadxPluginInfo;
+import jadx.api.plugins.JadxPluginInfoBuilder;
 import jadx.gui.JadxWrapper;
 import jadx.gui.ui.MainWindow;
 
@@ -25,10 +26,17 @@ import java.util.List;
 public class JadxAIPlugin implements JadxPlugin {
     private MainWindow mainWindow;
     private final Gson gson = new Gson();
+    public static final String PLUGIN_ID = "jadx-ai-mcp";
 
     @Override
     public void init(JadxPluginContext context) {
-        this.mainWindow = (MainWindow) context.getGuiContext().getMainFrame(); //context.getAppContext().getGuiContext().getMainFrame();;//context.getMainWindow();
+        if (context.getGuiContext() == null) {
+            System.err.println("[MyPlugin] GUI context is not available. This plugin requires jadx-gui.");
+            // Optionally throw an exception if GUI is required:
+            throw new IllegalStateException("MyPlugin: GUI context is null. Please run in jadx-gui to use this plugin.");
+        } else {
+            this.mainWindow = (MainWindow) context.getGuiContext().getMainFrame();
+        }
         System.out.println("MCP HTTP Plugin: Starting HTTP server...");
         this.start(mainWindow);
         //start();
@@ -68,12 +76,19 @@ public class JadxAIPlugin implements JadxPlugin {
 
     @Override
     public JadxPluginInfo getPluginInfo() {
-        return new JadxPluginInfo(
-                "jax-ai-plugin",
-                "JADX-AI MCP Plugin",
+        return JadxPluginInfoBuilder.pluginId(PLUGIN_ID)
+                .name("JADX-AI MCP Plugin")
+                .description("Integrates MCP Server support for JADX")
+                .homepage("https://github.com/zinja-coder/jadx-ai")
+                .requiredJadxVersion("1.5.1, r2333")
+                .build();
+
+                /*new JadxPluginInfo(
+                "jax-ai-mcp",
+                "JADX-AI MCP Integration",
                 "Provides MCP support to JADX",
-                "1.0.0",
-                "Zinja Coder");
+                "1.0.5",
+                "Zinja Coder");*/
     }
 
     class CurrentClassHandler implements HttpHandler {

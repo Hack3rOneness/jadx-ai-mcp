@@ -4,8 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>jadx.gui.plugins</groupId>
-    <artifactId>jadx-ai-plugin</artifactId>
-    <version>1.0.0</version>
+    <artifactId>jadx-ai-mcp</artifactId>
+    <version>1.0.5</version>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -25,7 +25,7 @@
         <!-- Local JAR dependency -->
         <dependency>
             <groupId>io.github.skylot</groupId>
-            <artifactId>jadx-gui</artifactId>
+            <artifactId>jadx-all</artifactId>
             <version>LOCAL</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/jadx-1.5.1-all.jar</systemPath>
