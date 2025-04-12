@@ -23,7 +23,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.List;
 
-public class JadxAIPlugin implements JadxPlugin {
+public class JadxAIMCP implements JadxPlugin {
     private MainWindow mainWindow;
     private final Gson gson = new Gson();
     public static final String PLUGIN_ID = "jadx-ai-mcp";
@@ -44,7 +44,7 @@ public class JadxAIPlugin implements JadxPlugin {
     }
 
     // Add this public no-argument constructor
-    public JadxAIPlugin() {
+    public JadxAIMCP() {
         // Empty constructor
     }
 
