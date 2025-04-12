@@ -31,9 +31,7 @@ public class JadxAIMCP implements JadxPlugin {
     @Override
     public void init(JadxPluginContext context) {
         if (context.getGuiContext() == null) {
-            System.err.println("[MyPlugin] GUI context is not available. This plugin requires jadx-gui.");
-            // Optionally throw an exception if GUI is required:
-            throw new IllegalStateException("MyPlugin: GUI context is null. Please run in jadx-gui to use this plugin.");
+            return;
         } else {
             this.mainWindow = (MainWindow) context.getGuiContext().getMainFrame();
         }
