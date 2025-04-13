@@ -191,7 +191,7 @@ And following content in it:
 {
     "mcpServers": {
         "jadx-mcp-server": {
-            "command": "/home/<YOUR_USERNAME/.local/bin/uv",
+            "command": "/<path>/<to>/uv", 
             "args": [
                 "--directory",
                 "</PATH/TO/>jadx-mcp-server/",
