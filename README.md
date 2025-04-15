@@ -255,6 +255,8 @@ This plugin allows total control over the GUI and internal project model to supp
 
  - Make LLM be able to modify code on JADX
 
+ - Add prompts templates, give llm access to Android APK Files as Resources
+
 ## NOTE For Contributors
 
  - The files related to JADX-AI-MCP can be found under this repo.
