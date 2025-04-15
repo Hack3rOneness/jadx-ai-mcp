@@ -92,7 +92,7 @@ public class JadxAIMCP implements JadxPlugin {
 
             server.setExecutor(null);
             server.start();
-            System.out.println("JADX MCP plugin HTTP server started at http://localhost:8650/");
+            System.out.println("JADX MCP plugin HTTP server started at http://127.0.0.1:8650/");
         } catch (IOException e) {
             e.printStackTrace();
         }
