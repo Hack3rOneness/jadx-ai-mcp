@@ -1,4 +1,5 @@
 <div align="center">
+
 # JADX-AI-MCP
 
 ![GitHub contributors](https://img.shields.io/github/contributors/zinja-coder/jadx-ai-mcp)
@@ -11,9 +12,9 @@
 
 </div>
 
-<!--> It is a still in early stage of development, so expects bugs, crashes and logical erros.-->
+<!-- It is a still in early stage of development, so expects bugs, crashes and logical erros.-->
 
-<!--> Standalone Plugin for [JADX](https://github.com/skylot/jadx) (Started as Fork) with Model Context Protocol (MCP) integration for AI-powered static code analysis and real-time code review and reverse engineering tasks using Claude.-->
+<!-- Standalone Plugin for [JADX](https://github.com/skylot/jadx) (Started as Fork) with Model Context Protocol (MCP) integration for AI-powered static code analysis and real-time code review and reverse engineering tasks using Claude.-->
 
 ![jadx-ai-banner.png](docs/assets/img.png) Image generated using AI tools.
 
