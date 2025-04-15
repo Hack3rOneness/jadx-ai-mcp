@@ -257,6 +257,9 @@ This plugin allows total control over the GUI and internal project model to supp
 
  - Add prompts templates, give llm access to Android APK Files as Resources
 
+ - **END-GOAL** : Make all android reverse engineering and APK modification tools Connect with single MCP server to make reverse engineering apk files as easy as possible purely from vibes.
+
+
 ## NOTE For Contributors
 
  - The files related to JADX-AI-MCP can be found under this repo.
