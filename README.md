@@ -270,6 +270,8 @@ This plugin allows total control over the GUI and internal project model to supp
 ## To report bugs, issues, feature suggestion, Performance issue, general question, Documentation issue.
  - Kindly open an issue with respective template.
 
+ - Tested on Claude Desktop Client, support for other AI will be tested soon!
+
 ## 🙏 Credits
 
 This project is a plugin for JADX, an amazing open-source Android decompiler created and maintained by [@skylot](https://github.com/skylot). All core decompilation logic belongs to them. I have only extended it to support my MCP server with AI capabilities.
