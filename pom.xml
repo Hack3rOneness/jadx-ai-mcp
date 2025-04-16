@@ -5,7 +5,7 @@
 
     <groupId>jadx.gui.plugins</groupId>
     <artifactId>jadx-ai-mcp</artifactId>
-    <version>1.0.7</version>
+    <version>1.1.0</version>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -13,22 +13,15 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <!-- Add this system path repository to reference local files -->
-    <repositories>
-        <repository>
-            <id>local-repository</id>
-            <url>file://${project.basedir}/lib</url>
-        </repository>
-    </repositories>
-
     <dependencies>
-        <!-- Local JAR dependency -->
+        <!-- Local JAR dependency to access jadx-gui-->
         <dependency>
             <groupId>io.github.skylot</groupId>
             <artifactId>jadx-all</artifactId>
             <version>LOCAL</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/jadx-1.5.1-all.jar</systemPath>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -72,6 +65,12 @@
                         </goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <!-- Exclude jadx from the shaded JAR -->
+                            <artifactSet>
+                                <excludes>
+                                    <exclude>io.github.skylot:jadx-all</exclude>
+                                </excludes>
+                            </artifactSet>
                             <!-- Relocate GSON to avoid conflicts -->
                             <relocations>
                                 <relocation>

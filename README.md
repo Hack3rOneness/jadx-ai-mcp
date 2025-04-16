@@ -172,10 +172,10 @@ cd jadx-mcp-server
 # 4. This project uses uv - https://github.com/astral-sh/uv instead of pip for dependency management.
     ## a. Install uv (if you dont have it yet)
 curl -LsSf https://astral.sh/uv/install.sh | sh
-    ## b. Set up the environment
+    ## b. OPTIONAL, if for any reasons, you get dependecy errors in jadx-mcp-server, Set up the environment
 uv venv
 source .venv/bin/activate  # or .venv\Scripts\activate on Windows
-    ## c. Install dependencies
+    ## c. OPTIONAL Install dependencies
 uv pip install httpx fastmcp
 
 # The setup for jadx-ai-mcp and jadx_mcp_server is done.
